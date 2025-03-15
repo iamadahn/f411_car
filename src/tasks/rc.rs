@@ -39,8 +39,7 @@ pub async fn rc_controller_task(
             if payload.len() != PAYLOAD_LENGTH {
                 continue;
             }
-            if !checksum_valid(payload.as_ref())
-            {
+            if !checksum_valid(payload.as_ref()) {
                 info!("Invalid checksum.");
                 continue;
             }
