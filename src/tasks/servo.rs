@@ -13,7 +13,7 @@ pub async fn servo_controller_task(
     input_sub: Receiver<'static, NoopRawMutex, ServoInput, 1>) {
     loop {
         let input = input_sub.receive().await;
-        info!("received input for servo");
+        info!("Servo controller: received input");
 
         let duty: u16 = 50 * input.angle as u16 / 9;
         match input.dir {
